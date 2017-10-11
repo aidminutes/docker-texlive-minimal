@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc
+FROM frolvlad/alpine-glibc:glibc-2.25
 
 COPY texlive-profile.txt /tmp/
 
