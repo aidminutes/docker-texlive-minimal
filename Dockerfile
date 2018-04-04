@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:glibc-2.25
+FROM frolvlad/alpine-glibc:glibc-2.27
 
 COPY texlive-profile.txt /tmp/
 
@@ -10,3 +10,4 @@ RUN apk add --no-cache wget perl xz && \
     apk --no-cache del xz
 
 ENV PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
+RUN tlmgr update --self
