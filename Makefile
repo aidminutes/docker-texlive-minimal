@@ -10,7 +10,7 @@ REGISTRY ?= registry.eu-de.bluemix.net/aidminutes
 ARCH ?= amd64
 
 # This version-strategy uses git tags to set the version string
-VERSION := $(shell git describe --tags --always --dirty)
+VERSION := $(shell date +"%Y-%m-%d")
 #
 # This version-strategy uses a manual value to set the version string
 #VERSION := 1.2.3
