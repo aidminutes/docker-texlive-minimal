@@ -6,8 +6,8 @@ COPY texlive-profile.txt /tmp/
 RUN apk add --no-cache wget perl xz && \
     wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xzf install-tl-unx.tar.gz && \
-    install-tl-20*/install-tl --profile=/tmp/texlive-profile.txt && \
+    install-tl-20*/install-tl --profile=/tmp/texlive-profile.txt && \ 
     apk --no-cache del xz
 
-ENV PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
+ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 RUN tlmgr update --self

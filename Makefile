@@ -24,7 +24,7 @@ IMAGE := $(REGISTRY)/$(BIN)-$(ARCH)
 
 build:
 	@echo "building: $@"
-	@docker build -t $(IMAGE):$(VERSION) .
+	@docker build --no-cache -t $(IMAGE):$(VERSION) .
 	@echo "container: $(IMAGE):$(VERSION)"
 
 push: build push-name
